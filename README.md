@@ -34,6 +34,23 @@ docker-compose up
 
 ## Development
 
+### Already up application with `docker-compose up` ?
+
+Attach to current web container with `docker-compose exec web bash`
+and then use all commands listed below without `docker-compose run web ..`
+for example:
+run:  
+
+```bash
+docker-compose exec web bash
+```
+
+And then insite web container just run any command that you need as usual:  
+
+```bash
+rails c
+```
+
 ### Running rails console
 
 ```bash
@@ -53,7 +70,7 @@ Update `Gemfile` and run
 
 ```bash
 bundle install
-docker-compose build
+docker-compose build web
 ```
 
 You will need to restart the server if running:
@@ -66,7 +83,7 @@ docker-compose restart
 
 ```bash
 bundle update spree
-docker-compose build
+docker-compose build web
 ```
 
 ## Environment variables
